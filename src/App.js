@@ -1,15 +1,21 @@
 import React, {Component} from 'react';
-
+import './App.css';
 import fire from './config/Fire';
 import LoginRegister from './components/LoginRegister';
 import Home from './components/Home';
-import './App.css';
+
+import "bootstrap/dist/css/bootstrap.css"  //Dinuka's update
+import ItemOrderView from './components/ItemOrderView';   //Dinuka's update
+import ReactDOM from 'react-dom';  //Dinuka's update
+
+ReactDOM.render(<ItemOrderView/>, document.getElementById("root"));   //Dinuka's update
 
 class App extends Component
 {
 
   constructor()
   {
+    
     super();
     this.state = {
       user :  null
@@ -38,6 +44,7 @@ class App extends Component
     return(
       <div>
         {this.state.user? (<Home />) : (<LoginRegister />)}
+       
         </div>
     );
   }

@@ -1,5 +1,5 @@
 import React ,{Component} from  "react"
-import Hero from "./Hero";
+import Hero from "./ItemOrderView";
 
 class Heroes extends Component {
 

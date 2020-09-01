@@ -1,6 +1,6 @@
 import React ,{Component} from  "react"
 
-class Hero extends Component {
+class ItemOrderView extends Component {
 
     state = { heroId: -189 };
     
@@ -23,7 +23,7 @@ return (
 
 );
     }
-    isHero(){
+    isItemOrderView(){
         return this.state.heroId < 0 ? "Not an avenger" :"Not happy avenger";
     }
     likeAvenger =(likecounter)=>{
@@ -31,4 +31,4 @@ this.setState({likecount: this.state.likecount + likecounter});
     };
     }
 
-export default Hero;
+export default ItemOrderView;
