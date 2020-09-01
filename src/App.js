@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import './App.css';
+
 import fire from './config/Fire';
 import LoginRegister from './components/LoginRegister';
 import Home from './components/Home';
+import './App.css';
 
 class App extends Component
 {
