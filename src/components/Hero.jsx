@@ -17,18 +17,19 @@ return (
     <div>price</div>
    
     <button className="btn btn-info" onClick={()=> {this.likeAvenger(1)}}  >
-        Like{""} 
-        <div>
-            <button>
-            new ori9ce
-            </button>
-           </div>
-       
-        
-        <span className="badge badge-light">{this.state.likecount} </span>
+        Add to Cart{""} 
+     <span className="badge badge-light">{this.state.likecount} </span>
     </button>
+      <button type="button" class="btn btn-primary">Buy Now</button>
   </div> 
 </div>
+
+
+
+
+
+
+
 
 
 );

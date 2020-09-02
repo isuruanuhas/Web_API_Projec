@@ -10,7 +10,8 @@ class Heroes extends Component {
 return (
 
 
-
+ 
+   
 
 
 
@@ -30,8 +31,7 @@ return (
     </nav>
   
 
-
-
+  
 
 
 
