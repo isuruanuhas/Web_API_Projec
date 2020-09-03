@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import '../App.css';
 import fire from '../config/Fire';
-
+import '../App.css';
 
 
 class LoginRegister extends Component
@@ -46,32 +45,14 @@ class LoginRegister extends Component
         this.setState({[e.target.name]: e.target.value});
     } 
 
-    getAction = action => {
-        if(action === 'reg'){
-            this.setState({formTitle: 'Register New User', loginBtn: false, fireErrors: ''});
-        }else{
-            this.setState({formTitle: 'Login', loginBtn: true, fireErrors: ''});
-        }
-    }
-
-
 render()
 {
 
     let errorNotification = this.state.fireErrors ? 
             ( <div className="Error"> {this.state.fireErrors} </div> ) : null;
-
-            let submitBtn = this.state.loginBtn ? 
-            (<input className="loginBtn" type="submit" onClick={this.login} value="Login" />) : 
-            (<input className="loginBtn" type="submit" onClick={this.register} value="Register" />);
-
-            let login_register = this.state.loginBtn ?
-            (<button className="registerBtn" onClick={() => this.getAction('reg')}>Register</button>) : 
-            (<button className="registerBtn" onClick={() => this.getAction('login')}>BacktoLogin</button>)
-
     return(
         <div className="form_block">
-            <div id="title">{this.state.formTitle}</div>
+            <div id="title">Login</div>
             <div className="body">
             {errorNotification}
                 <form>
@@ -85,9 +66,8 @@ render()
                     onChange={this.handleChange}
                     name='password' />
 
-                    {submitBtn}    
+                    <input type="submit" className="LoginBtn" onClick={this.login} value="Enter" />
                 </form>
-                    {login_register}
             </div> 
                     
         </div> 
