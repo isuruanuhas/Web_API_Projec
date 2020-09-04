@@ -21,7 +21,8 @@ export class DataProvider extends Component {
                 "title": "Nokia 7.2",
                 "src": "https://lifemobile.lk/wp-content/uploads/2019/10/nokia7-2-cyan.jpg",
                 "description": "4 GB RAM with 64 GB storage",
-                "content": "The Nokia 7.2 smartphone comes with a 6.3 inch full HD display. This provides a clear and vibrant visual experience on your phone. The 48 MP +5 MP + 8 MP rear camera comes along with LED flash. It also comes with a 20 MP front camera is useful for clicking memories that you can preserve with yourself. The phone also comes with a 64 GB of internal storage that you can use to store your media files and documents..",
+                "content": "The Nokia 7.2 smartphone comes with a 6.3 inch full HD display. This provides a clear and vibrant visual experience on your phone. The 48 MP +5 MP + 8 MP rear camera comes along with LED flash. It also comes with a 20 MP"
+                 +"front camera is useful for clicking memories that you can preserve with yourself. The phone also comes with a 64 GB of internal storage that you can use to store your media files and documents..",
                 "price": 190,
                 "colors": ["red", "black", "teal"],
                 "count": 1
