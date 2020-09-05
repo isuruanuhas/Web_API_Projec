@@ -3,6 +3,11 @@ import './App.css';
 import fire from './config/Fire';
 import LoginRegister from './components/LoginRegister';
 import Home from './components/Home';
+<<<<<<< Updated upstream
+=======
+import View from './components/Main View/View';
+import './App.css';
+>>>>>>> Stashed changes
 
 class App extends Component
 {
@@ -36,7 +41,7 @@ class App extends Component
   {
     return(
       <div>
-        {this.state.user? (<Home />) : (<LoginRegister />)}
+        {this.state.user? (<View />) : (<LoginRegister />)}
         </div>
     );
   }
