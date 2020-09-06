@@ -1,19 +1,15 @@
 import React, {Component} from 'react';
-
-import fire from './config/Fire';
-import LoginRegister from './components/LoginRegister';
-import Home from './components/Home';
-import View from './components/Main View/View';
+import fire from './config/fire';
+import LoginRegister from './components/loginregister';
+import View from './components/mainview/view';
 import './App.css';
 
-class App extends Component
-{
+class App extends Component {
 
-  constructor()
-  {
+  constructor(){
     super();
     this.state = {
-      user :  null
+      user: null
     }
   }
 
@@ -21,28 +17,23 @@ class App extends Component
     this.authListener();
   }
 
-  authListener()
-  {
-    fire.auth().onAuthStateChanged((user) =>
-    {
+  authListener(){
+    fire.auth().onAuthStateChanged((user) => {
       if(user){
         this.setState({user});
-      }
-      else{
+      }else{
         this.setState({user:null});
       }
-    }); 
+    });
   }
 
-  render()
-  {
-    return(
-      <div>
-        {this.state.user? (<View />) : (<LoginRegister />)}
+  render(){
+    return (
+        <div>
+          {this.state.user ? (<View />) : (<LoginRegister />)}
         </div>
     );
   }
-
 }
 
 export default App;

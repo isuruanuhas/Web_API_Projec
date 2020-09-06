@@ -1,20 +1,19 @@
+
 import React, {Component} from 'react';
-import fire from '../config/Fire';
+import fire from '../config/fire';
 import '../App.css';
 
 
-class LoginRegister extends Component
-{
-    constructor(props)
-    {
+class LoginRegister extends Component {
+    constructor(props){
         super(props);
         this.state = {
-            email : '',
-            password : '',
-            fireErrors : '',
-            formTitle : "Login",
-            loginBtn : true
-        };
+            email: '',
+            password: '',
+            fireErrors: '',
+            formTitle: 'Login',
+            loginBtn: true
+        }
     }
 
     login = e => {
@@ -43,38 +42,44 @@ class LoginRegister extends Component
 
     handleChange = e => {
         this.setState({[e.target.name]: e.target.value});
-    } 
+    }
 
-render()
-{
+    render(){
 
-    let errorNotification = this.state.fireErrors ? 
+        let errorNotification = this.state.fireErrors ? 
             ( <div className="Error"> {this.state.fireErrors} </div> ) : null;
-    return(
-        <div className="form_block">
-            <div id="title">Login</div>
-            <div className="body">
-            {errorNotification}
-                <form>
-                    <input type="text"
-                    value={this.state.email}
-                    onChange={this.handleChange}
-                    name='email' />
 
-                    <input type="password"
-                    value={this.state.password}
-                    onChange={this.handleChange}
-                    name='password' />
+        let submitBtn = this.state.loginBtn ? 
+            (<input className="loginBtn" type="submit" onClick={this.login} value="Login" />) : 
+            (<input className="loginBtn" type="submit" onClick={this.register} value="Register" />);
 
-                    <input type="submit" className="LoginBtn" onClick={this.login} value="Enter" />
-                </form>
-            </div> 
-                    
-        </div> 
-    );
-}
+        let login_register = this.state.loginBtn ?
+            (<button className="registerBtn" onClick={() => this.getAction('reg')}>Register</button>) : 
+            (<button className="registerBtn" onClick={() => this.getAction('login')}>Login</button>)
 
+        return(
+            <div className="form_block">
+                <div id="title">{this.state.formTitle}</div>
+                <div className="body">
+                    {errorNotification}
+                    <form>
+                        <input type="text" 
+                        value={this.state.email} 
+                        onChange={this.handleChange} 
+                        name="email" />
 
+                        <input type="password" 
+                        value={this.state.password} 
+                        onChange={this.handleChange} 
+                        name="password" />
+
+                        {submitBtn}
+                    </form>
+                    {login_register}
+                </div>
+            </div>
+        )
+    }
 }
 
 export default LoginRegister;
