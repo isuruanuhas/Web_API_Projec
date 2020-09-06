@@ -73,9 +73,15 @@ class LoginRegister extends Component {
                         onChange={this.handleChange} 
                         name="password" />
 
-                    <div class="col">
-                    <input type="text" class="form-control" placeholder="User Type"></input>
-                     </div>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+<label class= "btn btn-secondary active">
+<input type="radio" name="options" id="option1" checked/> Admin
+</label>
+<label class= "btn btn-secondary active">
+<input type="radio" name="options" id="option2" checked/> User
+</label>
+
+  </div>
 
                         {submitBtn}
                     </form>
