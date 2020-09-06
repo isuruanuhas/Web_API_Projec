@@ -73,6 +73,10 @@ class LoginRegister extends Component {
                         onChange={this.handleChange} 
                         name="password" />
 
+                    <div class="col">
+                    <input type="text" class="form-control" placeholder="User Type"></input>
+                     </div>
+
                         {submitBtn}
                     </form>
                     {login_register}
