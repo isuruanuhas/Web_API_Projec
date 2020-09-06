@@ -48,15 +48,12 @@ class View extends Component {
 </div>
 </div>
 
- </form>
+</form>
  <button type="button" class="btn btn-primary">Add Product</button>
-            
- <div>
+    <button onClick={this.logout}>Logout</button>
+            </div>  
                
-                <button onClick={this.logout}>Logout</button>
-            </div>
-
-       </div>        
+                  
             
         )
     }
