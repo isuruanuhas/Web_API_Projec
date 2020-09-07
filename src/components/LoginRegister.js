@@ -1,7 +1,8 @@
 
 import React, {Component} from 'react';
-import fire from '../config/Fire';
+import fire from '../config/fire';
 import '../App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 class LoginRegister extends Component {
@@ -53,29 +54,55 @@ class LoginRegister extends Component {
             (<input className="loginBtn" type="submit" onClick={this.login} value="Login" />) : 
             (<input className="loginBtn" type="submit" onClick={this.register} value="Register" />);
 
-        let login_register = this.state.loginBtn ?
-            (<button className="registerBtn" onClick={() => this.getAction('reg')}>Register</button>) : 
-            (<button className="registerBtn" onClick={() => this.getAction('login')}>Login</button>)
+            let login_register = this.state.loginBtn ?
+            (<button class="btn btn-secondary" onClick={() => this.getAction('reg')}>Register</button>) : 
+            (<button class="btn btn-primary" onClick={() => this.getAction('login')}>Login</button>);
 
         return(
-            <div className="form_block">
+            <div class="modal-body">
+            <nav class="navbar navbar-dark bg-dark">
+               <h2>
+               <p class="text-white bg-dark">
                 <div id="title">{this.state.formTitle}</div>
+                </p>
+                </h2>
+                </nav>
+
+                <div>
+                        <img class="mb-4" src="https://cdn4.vectorstock.com/i/1000x1000/60/28/swoosh-smart-mobile-phone-logo-icon-vector-23676028.jpg" alt="" width="72" height="72" />
+                        
+                        </div>
+
+
                 <div className="body">
                     {errorNotification}
-                    <form>
-                        <input type="text" 
+                    <form class="form-signin">
+                    <div class="input-group mb-3">
+  
+  <span class="input-group-text" id="basic-addon1">Email</span>
+                        <input type="text"  autofocus="" class="form-control" 
                         value={this.state.email} 
                         onChange={this.handleChange} 
                         name="email" />
+                        </div>
 
-                        <input type="password" 
+                        <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon2">Password</span>
+                        <input type="password" autofocus="" class="form-control" 
                         value={this.state.password} 
                         onChange={this.handleChange} 
                         name="password" />
+                        </div>
 
+                        <div class="input-group mb-3">
                         {submitBtn}
+                        </div>
+                        
                     </form>
+                    <div class="input-group mb-3">
                     {login_register}
+                    </div>
+                    
                 </div>
             </div>
         )
