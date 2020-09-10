@@ -11,19 +11,7 @@ class Mobiles extends Component {
       <div className="container">
         <div className="row">
           {this.state.mobilephones.map((phone) => (
-            <div className="col" key={phone.id}>
-              <Mobile
-                key={phone.id}
-                phone={phone}
-                // onDelete={() => this.deleteAvenger(avenger.id)}
-                // onLike={() => this.likeAvenger(avenger)} phone off /hariii
-                //suneya thankss bn ekenmahhh
-                //heta set wemuda eenam //over 
-                // haree over
-                //elamaa sunee over// elaa overrr//gn over
-                
-              />
-            </div>
+            <Mobile key={phone.id} phone={phone} />
           ))}
         </div>
       </div>
@@ -31,9 +19,7 @@ class Mobiles extends Component {
   }
 
   async componentDidMount() {
-    let { data } = await axios.get(
-      "http://localhost:5000" // replace with your API url
-    );
+    let { data } = await axios.get("http://localhost:5000");
     console.log(data);
 
     let mobiles = data.map((mobilePhone) => {

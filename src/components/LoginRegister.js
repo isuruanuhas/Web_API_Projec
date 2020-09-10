@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import fire from '../config/fire';
+import Fire from '../config/Fire';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -19,7 +19,7 @@ class LoginRegister extends Component {
 
     login = e => {
         e.preventDefault();
-        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+        Fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .catch((error) => {
             this.setState({fireErrors: error.message})
         });
@@ -27,7 +27,7 @@ class LoginRegister extends Component {
 
     register = e => {
         e.preventDefault();
-        fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+        Fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
         .catch((error) => {
             this.setState({fireErrors: error.message})
         });
